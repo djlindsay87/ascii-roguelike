@@ -6,7 +6,9 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <map>
 
+#include <cassert>
 
 //#include "player.h"
 
@@ -17,17 +19,26 @@ class Level{
 		Level();
 	
 		void loadPalette(string fileName);
+		void loadLevel(string fileName);
 		void print();
 		
-		//char getTile(int x, int y);
-		//void setTile(int x, int y, char tile);
+		char getChar(int x, int y);
+		void setChar(int x, int y, char tile);
+		
+		vector<string> tileGrab(char ch);
 	
 	private:
-		vector <string> _levelData;
-		int _magic;
-		//TileBatch _tileBatch;
+		void initMap_();
+	
+		vector <string> levelData_;
+		vector <string> paletteData_;
+		unsigned int pal_, tw_, th_;
+		int magic_, pw_, ph_;
 		
-		//void interpret(int x, int y);
+		string charList_;
+		int charLen_;
+		
+		map<char, vector<int>> m_;
 };
 
 #endif

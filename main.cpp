@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cstdio>
-
 #include <io.h>
 #include <fcntl.h>
 
@@ -9,9 +8,8 @@
 using namespace std;
 
 int main()
-{
-	GameSystem tileSet("sheet.txt");
-	tileSet.playGame();
-	
+{	
+	GameSystem gameSystem;
+		
 	return 0;
 }

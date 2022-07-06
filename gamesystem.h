@@ -14,14 +14,16 @@ using namespace std;
 class GameSystem
 {
 	public:
-		GameSystem(string levelFile);
+		GameSystem();
+		
+		void loadLevel(string levelFile);
 		
 		void playGame();
 		char playerMove();
 		
 	private:
 		//Player _player;
-		Level _level;
+		Level level_;
 };
 
 #endif
